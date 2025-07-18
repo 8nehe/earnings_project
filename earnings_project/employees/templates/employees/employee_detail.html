@@ -1,0 +1,18 @@
+{% extends 'employees/base.html'  %}
+
+{% block content %}
+
+<h2>{{ employee.name }} - {{ employee.job_title }}</h2>
+
+<p>Age: {{ employee.age }}</p>
+<p>Net Income: {{ net_income }}</p>
+<p>Weekly Income: {{ weekly_income }}</p>
+
+<h3>Expenses</h3>
+<ul>
+    {% for expense in expenses %}
+      <li>{{ expense.name }}: {{ expense.amount }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
