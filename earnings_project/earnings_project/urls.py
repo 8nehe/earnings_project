@@ -23,7 +23,7 @@ base_url  = "api/v1"
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('employees/', include('employees.urls')),
-    # path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
+    path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
     path(f"{base_url}/users/", include("accounts.urls")),
 
 ]

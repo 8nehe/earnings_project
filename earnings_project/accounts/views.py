@@ -7,6 +7,7 @@ User = get_user_model()
 
 from rest_framework.mixins import ListModelMixin, CreateModelMixin
 from rest_framework.generics import GenericAPIView
+from rest_framework.decorators import api_view
 
 
 """
@@ -17,6 +18,10 @@ View
 - Save the data
 - Return a response to the client
 """
+
+@api_view(['GET'])
+def hello_world(request):
+    return Response({"message": "Hello, World!"}, status=status.HTTP_200_OK)
 
 class UserRegistrationView(generics.CreateAPIView):
     queryset = User.objects.all()
